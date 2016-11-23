@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @poll.errors.any? %>
+  <% @poll.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Poll</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_poll" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for game_id -->
+      <div class="form-group">
+        <label for="game_id" class="control-label">
+          Game
+        </label>
+
+        <input type="text" id="game_id" name="game_id" placeholder="Game" class="form-control" value="<%= @poll.game_id %>">
+      </div>
+
+      <!-- Label and input for fan_id -->
+      <div class="form-group">
+        <label for="fan_id" class="control-label">
+          Fan
+        </label>
+
+        <input type="text" id="fan_id" name="fan_id" placeholder="Fan" class="form-control" value="<%= @poll.fan_id %>">
+      </div>
+
+      <!-- Label and input for question -->
+      <div class="form-group">
+        <label for="question" class="control-label">
+          Question
+        </label>
+
+        <textarea id="question" name="question" placeholder="Question" class="form-control" rows="3"><%= @poll.question %></textarea>
+      </div>
+
+      <button class="btn btn-success">
+        Create Poll
+      </button>
+      or
+      <a href="/polls">Cancel</a>
+    </form>
+  </div>
+</div>

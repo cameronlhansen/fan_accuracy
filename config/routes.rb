@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Poll resource:
+  # CREATE
+  get "/polls/new", :controller => "polls", :action => "new"
+  post "/create_poll", :controller => "polls", :action => "create"
+
+  # READ
+  get "/polls", :controller => "polls", :action => "index"
+  get "/polls/:id", :controller => "polls", :action => "show"
+
+  # UPDATE
+  get "/polls/:id/edit", :controller => "polls", :action => "edit"
+  post "/update_poll/:id", :controller => "polls", :action => "update"
+
+  # DELETE
+  get "/delete_poll/:id", :controller => "polls", :action => "destroy"
+  #------------------------------
+
   # Routes for the Game resource:
   # CREATE
   get "/games/new", :controller => "games", :action => "new"
