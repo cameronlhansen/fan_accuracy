@@ -1,5 +1,7 @@
 ActiveAdmin.register Pick do
 
+ permit_params :type, :game_id, :fan_id, :over_under_pick, :spread_pick
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
