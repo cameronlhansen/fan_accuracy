@@ -22,8 +22,11 @@
         <td><%= poll.question %></td>
         <td>
           <a href="/polls/<%= poll.id %>" class="btn btn-primary">Show</a>
-          <a href="/polls/<%= poll.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_poll/<%= poll.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == poll.fan %>
+            <a href="/polls/<%= poll.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_poll/<%= poll.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>
