@@ -1,0 +1,25 @@
+<div class="page-header">
+  <h3>Fan #<%= @fan.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Email</dt>
+      <dd><%= @fan.email %></dd>
+
+      <dt>Password</dt>
+      <dd><%= @fan.password %></dd>
+
+      <dt>Primary team</dt>
+      <dd><%= @fan.primary_team_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/fans" class="btn btn-primary">
+        Back
+      </a>
+    </div>
+  </div>
+</div>
