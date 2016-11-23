@@ -17,7 +17,7 @@
 
       <% @polls.each do |poll| %>
       <tr>
-        <td><%= poll.game_id %></td>
+        <td><%= poll.game.home_team_id %></td>
         <td><%= poll.fan_id %></td>
         <td><%= poll.question %></td>
         <td>
