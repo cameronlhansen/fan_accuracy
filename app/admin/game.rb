@@ -1,5 +1,7 @@
 ActiveAdmin.register Game do
 
+ permit_params :home_team_id, :spread, :over_under, :game_date_time, :away_team_id
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
