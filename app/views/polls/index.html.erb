@@ -18,7 +18,7 @@
       <% @polls.each do |poll| %>
       <tr>
         <td><%= poll.game.home_team_id %></td>
-        <td><%= poll.fan_id %></td>
+        <td><%= poll.fan.email %></td>
         <td><%= poll.question %></td>
         <td>
           <a href="/polls/<%= poll.id %>" class="btn btn-primary">Show</a>
