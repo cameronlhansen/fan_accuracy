@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h3>Game #<%= @game.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Home team</dt>
+      <dd><%= @game.home_team_id %></dd>
+
+      <dt>Spread</dt>
+      <dd><%= @game.spread %></dd>
+
+      <dt>Over under</dt>
+      <dd><%= @game.over_under %></dd>
+
+      <dt>Game date time</dt>
+      <dd><%= @game.game_date_time %></dd>
+
+      <dt>Away team</dt>
+      <dd><%= @game.away_team_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/games" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/games/<%= @game.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_game/<%= @game.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

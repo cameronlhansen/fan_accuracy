@@ -1,0 +1,73 @@
+<!-- Validation failure messages -->
+<% if @game.errors.any? %>
+  <% @game.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Game #<%= @game.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_game/<%= @game.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for home_team_id -->
+      <div class="form-group">
+        <label for="home_team_id" class="control-label">
+          Home team
+        </label>
+
+        <input type="text" id="home_team_id" name="home_team_id" placeholder="Home team" class="form-control" value="<%= @game.home_team_id %>">
+      </div>
+
+      <!-- Label and input for spread -->
+      <div class="form-group">
+        <label for="spread" class="control-label">
+          Spread
+        </label>
+
+        <input type="text" id="spread" name="spread" placeholder="Spread" class="form-control" value="<%= @game.spread %>">
+      </div>
+
+      <!-- Label and input for over_under -->
+      <div class="form-group">
+        <label for="over_under" class="control-label">
+          Over under
+        </label>
+
+        <input type="text" id="over_under" name="over_under" placeholder="Over under" class="form-control" value="<%= @game.over_under %>">
+      </div>
+
+      <!-- Label and input for game_date_time -->
+      <div class="form-group">
+        <label for="game_date_time" class="control-label">
+          Game date time
+        </label>
+
+        <input type="text" id="game_date_time" name="game_date_time" placeholder="Game date time" class="form-control" value="<%= @game.game_date_time %>">
+      </div>
+
+      <!-- Label and input for away_team_id -->
+      <div class="form-group">
+        <label for="away_team_id" class="control-label">
+          Away team
+        </label>
+
+        <input type="text" id="away_team_id" name="away_team_id" placeholder="Away team" class="form-control" value="<%= @game.away_team_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Game
+      </button>
+      or
+      <a href="/games/<%= @game.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
