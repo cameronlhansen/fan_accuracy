@@ -10,7 +10,7 @@ class PicksController < ApplicationController
   end
 
   def index
-    @picks = Pick.all
+    @picks = current_user.picks.page(params[:page]).per(10)
 
     render("picks/index.html.erb")
   end
