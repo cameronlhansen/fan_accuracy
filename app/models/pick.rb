@@ -5,6 +5,8 @@ class Pick < ApplicationRecord
 
   # Validations
 
+  validates :game_id, :presence => true
+
   validates :type, :uniqueness => { :scope => [:fan_id] }
 
   validates :type, :presence => true
