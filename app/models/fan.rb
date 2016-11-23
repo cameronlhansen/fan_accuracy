@@ -1,6 +1,10 @@
 class Fan < ApplicationRecord
   # Direct associations
 
+  belongs_to :primary_team,
+             :class_name => "Team",
+             :counter_cache => true
+
   has_many   :polls,
              :dependent => :destroy
 
