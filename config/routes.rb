@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "teams#index"
   # Routes for the Poll resource:
   # CREATE
   get "/polls/new", :controller => "polls", :action => "new"
