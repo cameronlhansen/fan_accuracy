@@ -10,7 +10,7 @@ class PollsController < ApplicationController
   end
 
   def index
-    @polls = Poll.all
+    @polls = current_user.polls.page(params[:page]).per(10)
 
     render("polls/index.html.erb")
   end
