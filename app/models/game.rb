@@ -1,6 +1,9 @@
 class Game < ApplicationRecord
   # Direct associations
 
+  has_many   :picks,
+             :dependent => :destroy
+
   belongs_to :home_team,
              :class_name => "Team"
 
