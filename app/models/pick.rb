@@ -5,4 +5,6 @@ class Pick < ApplicationRecord
 
   # Validations
 
+  validates :type, :presence => true
+
 end
