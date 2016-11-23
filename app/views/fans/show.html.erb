@@ -23,3 +23,65 @@
     </div>
   </div>
 </div>
+
+<!-- A Fan has many picks -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Picks
+      </li>
+
+      <% @fan.picks.each do |pick| %>
+        <li class="list-group-item">
+          <a href="/picks/<%= pick.id %>">
+            <%= pick.type %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/picks/<%= pick.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/picks/<%= pick.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_pick/<%= pick.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Fan has many polls -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Polls
+      </li>
+
+      <% @fan.polls.each do |poll| %>
+        <li class="list-group-item">
+          <a href="/polls/<%= poll.id %>">
+            <%= poll.game_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/polls/<%= poll.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/polls/<%= poll.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_poll/<%= poll.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
