@@ -42,7 +42,7 @@
           Fan
         </label>
 
-        <input type="text" id="fan_id" name="fan_id" placeholder="Fan" class="form-control" value="<%= @pick.fan_id %>">
+        <%= select_tag(:fan_id, options_from_collection_for_select(Fan.all, :id, :email, @pick.fan_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for over_under_pick -->
