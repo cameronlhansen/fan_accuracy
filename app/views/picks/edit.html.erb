@@ -36,14 +36,8 @@
         <%= select_tag(:game_id, options_from_collection_for_select(Game.all, :id, :home_team_id, @pick.game_id), :class => "form-control") %>
       </div>
 
-      <!-- Label and input for fan_id -->
-      <div class="form-group">
-        <label for="fan_id" class="control-label">
-          Fan
-        </label>
-
-        <%= select_tag(:fan_id, options_from_collection_for_select(Fan.all, :id, :email, @pick.fan_id), :class => "form-control") %>
-      </div>
+      
+      
 
       <!-- Label and input for over_under_pick -->
       <div class="checkbox">
