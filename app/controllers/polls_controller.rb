@@ -10,7 +10,8 @@ class PollsController < ApplicationController
   end
 
   def index
-    @polls = current_user.polls.page(params[:page]).per(10)
+    @q = current_user.polls.ransack(params[:q])
+      @polls = @q.result(:distinct => true).includes(:fan, :game).page(params[:page]).per(10)
 
     render("polls/index.html.erb")
   end

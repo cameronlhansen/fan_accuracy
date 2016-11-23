@@ -10,7 +10,8 @@ class PicksController < ApplicationController
   end
 
   def index
-    @picks = current_user.picks.page(params[:page]).per(10)
+    @q = current_user.picks.ransack(params[:q])
+      @picks = @q.result(:distinct => true).includes(:fan, :game).page(params[:page]).per(10)
 
     render("picks/index.html.erb")
   end
