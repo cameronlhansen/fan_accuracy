@@ -5,6 +5,8 @@ class Poll < ApplicationRecord
 
   # Validations
 
+  validates :game_id, :presence => true
+
   validates :question, :presence => true
 
 end
