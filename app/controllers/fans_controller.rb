@@ -1,6 +1,6 @@
 class FansController < ApplicationController
   def index
-    @fans = Fan.all
+    @fans = Fan.page(params[:page]).per(10)
   end
 
   def show
