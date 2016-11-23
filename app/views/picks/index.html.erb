@@ -26,8 +26,11 @@
         <td><%= pick.spread_pick %></td>
         <td>
           <a href="/picks/<%= pick.id %>" class="btn btn-primary">Show</a>
-          <a href="/picks/<%= pick.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_pick/<%= pick.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == pick.fan %>
+            <a href="/picks/<%= pick.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_pick/<%= pick.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>

@@ -1,4 +1,14 @@
 class PicksController < ApplicationController
+  before_action :current_user_must_be_pick_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_pick_fan
+    pick = Pick.find(params[:id])
+
+    unless current_user == pick.fan
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @picks = Pick.all
 
