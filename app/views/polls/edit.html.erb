@@ -27,14 +27,8 @@
         <%= select_tag(:game_id, options_from_collection_for_select(Game.all, :id, :home_team_id, @poll.game_id), :class => "form-control") %>
       </div>
 
-      <!-- Label and input for fan_id -->
-      <div class="form-group">
-        <label for="fan_id" class="control-label">
-          Fan
-        </label>
-
-        <%= select_tag(:fan_id, options_from_collection_for_select(Fan.all, :id, :email, @poll.fan_id), :class => "form-control") %>
-      </div>
+      
+      
 
       <!-- Label and input for question -->
       <div class="form-group">
