@@ -1,6 +1,9 @@
 class Fan < ApplicationRecord
   # Direct associations
 
+  has_many   :polls,
+             :dependent => :destroy
+
   has_many   :picks,
              :dependent => :destroy
 
