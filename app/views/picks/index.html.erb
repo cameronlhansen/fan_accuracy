@@ -1,0 +1,36 @@
+<div class="page-header">
+  <h1>
+    Picks
+    <a href="/picks/new" class="btn btn-lg btn-success">New Pick</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Type</th>
+        <th>Game</th>
+        <th>Fan</th>
+        <th>Over under pick</th>
+        <th>Spread pick</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @picks.each do |pick| %>
+      <tr>
+        <td><%= pick.type %></td>
+        <td><%= pick.game_id %></td>
+        <td><%= pick.fan_id %></td>
+        <td><%= pick.over_under_pick %></td>
+        <td><%= pick.spread_pick %></td>
+        <td>
+          <a href="/picks/<%= pick.id %>" class="btn btn-primary">Show</a>
+          <a href="/picks/<%= pick.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_pick/<%= pick.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Pick resource:
+  # CREATE
+  get "/picks/new", :controller => "picks", :action => "new"
+  post "/create_pick", :controller => "picks", :action => "create"
+
+  # READ
+  get "/picks", :controller => "picks", :action => "index"
+  get "/picks/:id", :controller => "picks", :action => "show"
+
+  # UPDATE
+  get "/picks/:id/edit", :controller => "picks", :action => "edit"
+  post "/update_pick/:id", :controller => "picks", :action => "update"
+
+  # DELETE
+  get "/delete_pick/:id", :controller => "picks", :action => "destroy"
+  #------------------------------
+
   # Routes for the Team resource:
   # CREATE
   get "/teams/new", :controller => "teams", :action => "new"

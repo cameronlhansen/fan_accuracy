@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h3>Pick #<%= @pick.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Type</dt>
+      <dd><%= @pick.type %></dd>
+
+      <dt>Game</dt>
+      <dd><%= @pick.game_id %></dd>
+
+      <dt>Fan</dt>
+      <dd><%= @pick.fan_id %></dd>
+
+      <dt>Over under pick</dt>
+      <dd><%= @pick.over_under_pick %></dd>
+
+      <dt>Spread pick</dt>
+      <dd><%= @pick.spread_pick %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/picks" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/picks/<%= @pick.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_pick/<%= @pick.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
