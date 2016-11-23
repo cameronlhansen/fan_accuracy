@@ -5,6 +5,8 @@ class Game < ApplicationRecord
 
   # Validations
 
+  validates :away_team_id, :presence => true
+
   validates :game_date_time, :presence => true
 
   validates :home_team_id, :presence => true
