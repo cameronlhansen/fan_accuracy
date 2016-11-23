@@ -1,5 +1,7 @@
 ActiveAdmin.register Poll do
 
+ permit_params :game_id, :fan_id, :question
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
