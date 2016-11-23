@@ -5,6 +5,8 @@ class Game < ApplicationRecord
 
   # Validations
 
+  validates :over_under, :numericality => true
+
   validates :spread, :numericality => true
 
 end
