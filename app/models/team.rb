@@ -5,6 +5,8 @@ class Team < ApplicationRecord
 
   # Validations
 
+  validates :logo, :presence => true
+
   validates :name, :uniqueness => true
 
   validates :name, :presence => true
