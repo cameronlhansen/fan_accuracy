@@ -1,6 +1,8 @@
 class Poll < ApplicationRecord
   # Direct associations
 
+  belongs_to :game
+
   belongs_to :fan
 
   # Indirect associations
