@@ -12,7 +12,13 @@
       <dd><%= @fan.password %></dd>
 
       <dt>Primary team</dt>
-      <dd><%= @fan.primary_team_id %></dd>
+      <dd>
+        <% if @fan.primary_team.present? %>
+          <a href="/teams/<%= @fan.primary_team_id %>">
+            <%= @fan.primary_team.name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

@@ -19,7 +19,13 @@
 
       <% @games.each do |game| %>
       <tr>
-        <td><%= game.home_team.name %></td>
+        <td>
+          <% if game.home_team.present? %>
+            <a href="/teams/<%= game.home_team.id %>">
+              <%= game.home_team.name %>
+            </a>
+          <% end %>
+        </td>
         <td><%= game.spread %></td>
         <td><%= game.over_under %></td>
         <td><%= game.game_date_time %></td>

@@ -9,10 +9,22 @@
       <dd><%= @pick.type %></dd>
 
       <dt>Game</dt>
-      <dd><%= @pick.game_id %></dd>
+      <dd>
+        <% if @pick.game.present? %>
+          <a href="/games/<%= @pick.game_id %>">
+            <%= @pick.game.home_team_id %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Fan</dt>
-      <dd><%= @pick.fan_id %></dd>
+      <dd>
+        <% if @pick.fan.present? %>
+          <a href="/fans/<%= @pick.fan_id %>">
+            <%= @pick.fan.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Over under pick</dt>
       <dd><%= @pick.over_under_pick %></dd>

@@ -20,8 +20,20 @@
       <% @picks.each do |pick| %>
       <tr>
         <td><%= pick.type %></td>
-        <td><%= pick.game.home_team_id %></td>
-        <td><%= pick.fan.email %></td>
+        <td>
+          <% if pick.game.present? %>
+            <a href="/games/<%= pick.game.id %>">
+              <%= pick.game.home_team_id %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if pick.fan.present? %>
+            <a href="/fans/<%= pick.fan.id %>">
+              <%= pick.fan.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= pick.over_under_pick %></td>
         <td><%= pick.spread_pick %></td>
         <td>
