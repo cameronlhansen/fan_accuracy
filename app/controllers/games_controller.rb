@@ -6,6 +6,8 @@ class GamesController < ApplicationController
   end
 
   def show
+    @poll = Poll.new
+    @pick = Pick.new
     @game = Game.find(params[:id])
 
     render("games/show.html.erb")

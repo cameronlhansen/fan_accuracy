@@ -63,6 +63,48 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_pick" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for type -->
+      <div class="form-group">
+        <label for="type" class="control-label">
+          Type
+        </label>
+
+        <input type="text" id="type" name="type" placeholder="Type" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for game_id -->
+      <input type="hidden" name="game_id" value="<%= @game.id %>">
+
+      <!-- Label and input for fan_id -->
+      <input type="hidden" name="fan_id" value="<%= current_user.id %>">
+
+      <!-- Label and input for over_under_pick -->
+      <div class="checkbox">
+        <label for="over_under_pick">
+          <input type="checkbox" id="over_under_pick" name="over_under_pick" value="1" <%= "checked" if @pick.over_under_pick %>>
+          Over under pick
+        </label>
+      </div>
+
+      <!-- Label and input for spread_pick -->
+      <div class="checkbox">
+        <label for="spread_pick">
+          <input type="checkbox" id="spread_pick" name="spread_pick" value="1" <%= "checked" if @pick.spread_pick %>>
+          Spread pick
+        </label>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Pick
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -94,6 +136,32 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_poll" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for game_id -->
+      <input type="hidden" name="game_id" value="<%= @game.id %>">
+
+      <!-- Label and input for fan_id -->
+      <input type="hidden" name="fan_id" value="<%= current_user.id %>">
+
+      <!-- Label and input for question -->
+      <div class="form-group">
+        <label for="question" class="control-label">
+          Question
+        </label>
+
+        <textarea id="question" name="question" placeholder="Question" class="form-control" rows="3"></textarea>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Poll
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

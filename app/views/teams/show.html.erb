@@ -54,6 +54,10 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        
+      </li>
     </ul>
   </div>
 </div>
@@ -85,6 +89,62 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_game" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for home_team_id -->
+      <div class="form-group">
+        <label for="home_team_id" class="control-label">
+          Home team
+        </label>
+
+        <%= select_tag(:home_team_id, options_from_collection_for_select(Team.all, :id, :name), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for spread -->
+      <div class="form-group">
+        <label for="spread" class="control-label">
+          Spread
+        </label>
+
+        <input type="text" id="spread" name="spread" placeholder="Spread" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for over_under -->
+      <div class="form-group">
+        <label for="over_under" class="control-label">
+          Over under
+        </label>
+
+        <input type="text" id="over_under" name="over_under" placeholder="Over under" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for game_date_time -->
+      <div class="form-group">
+        <label for="game_date_time" class="control-label">
+          Game date time
+        </label>
+
+        <input type="text" id="game_date_time" name="game_date_time" placeholder="Game date time" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for away_team_id -->
+      <div class="form-group">
+        <label for="away_team_id" class="control-label">
+          Away team
+        </label>
+
+        <input type="text" id="away_team_id" name="away_team_id" placeholder="Away team" class="form-control" value="">
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Game
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
